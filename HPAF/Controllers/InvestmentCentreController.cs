@@ -11,6 +11,7 @@ namespace HPAF.Controllers
         // GET: InvestmentCentre
         public ActionResult Index()
         {
+            //klkj
             return View();
         }
     }
