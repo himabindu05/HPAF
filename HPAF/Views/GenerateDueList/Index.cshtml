@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "Generate Due List";
+}
+
+<h2>Generate Due List</h2>
+<style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #286090;
+            color: white;
+        }
+</style>
+<div class="row">
+    <div class="col-md-1">
+        <label class="color-black">Location</label>
+    </div>
+    <div class="col-md-2">
+        <select id="storelocation" class="form-control">
+            <option value="">Select</option>
+            <option value="NRPT1">NRPT1</option>
+            <option value="NRPT2">NRPT2</option>
+            <option value="SP">SP</option>
+        </select>
+    </div>
+    <input type="button" id="btnSubmit" value="Generate Due List" class="btnSave btn btn-primary btn-sm" />
+
+</div>
+
+  
+<table id="customers" style="margin-top:2%">
+    <tr>
+        <th>S.no</th>
+        <th>Agreement No</th>
+        <th>Vehicle No</th>
+        <th>Vehicle Name</th>
+        <th>Model</th>
+        <th>Customer Name</th>
+        <th>Mobile No</th>
+        <th>EMI Amount</th>
+        <th>Due Date</th>
+        <th>Pending EMIs</th>
+        <th>Previous EMI pending Amount</th>
+        <th>Total Amount</th>
+        <th>last Paid</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1234</td>
+        <td>AP07DF2345</td>
+        <td></td>
+        <td>2018</td>
+        <td>John</td>
+        <td>9999999999</td>
+        <td>2300</td>
+        <td>12/2/2019</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2300</td>
+        <td>10/1/2019</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>6979</td>
+        <td>AP07DF0098</td>
+        <td></td>
+        <td>2015</td>
+        <td>Hafeez</td>
+        <td>9999999999</td>
+        <td>2100</td>
+        <td>21/2/2019</td>
+        <td>2</td>
+        <td>250</td>
+        <td>4650</td>
+        <td>22/11/2019</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>6989</td>
+        <td>AP07DF9987</td>
+        <td></td>
+        <td>2017</td>
+        <td>Joe</td>
+        <td>9999999999</td>
+        <td>2400</td>
+        <td>15/2/2019</td>
+        <td>1</td>
+        <td>100</td>
+        <td>4900</td>
+        <td>22/12/2019</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>6980</td>
+        <td>AP07DF7865</td>
+        <td></td>
+        <td>2013</td>
+        <td>Sachin</td>
+        <td>9999999999</td>
+        <td>1800</td>
+        <td>8/2/2019</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1800</td>
+        <td>10/1/2019</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>9087</td>
+        <td>AP07DF2345</td>
+        <td></td>
+        <td>2016</td>
+        <td>Dhoni</td>
+        <td>9999999999</td>
+        <td>3100</td>
+        <td>8/2/2019</td>
+        <td>0</td>
+        <td>500</td>
+        <td>1800</td>
+        <td>14/1/2019</td>
+    </tr>
+   
+</table>
+
+<div class="row" style="margin-top:1%">
+    <input type="button" id="btnSubmit1" value="Print Due List" style="margin-left:76%" class="btnSave btn btn-primary btn-default" />
+    <input type="button" id="btnSubmit2" value="Download Due List" class="btnSave btn btn-primary btn-default pull-right" />
+</div>

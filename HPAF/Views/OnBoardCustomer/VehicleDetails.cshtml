@@ -1,0 +1,290 @@
+﻿
+@{
+    ViewBag.Title = "Vehicle Details";
+}
+
+<h2>Vehicle Details</h2>
+
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Vehicle Name</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="vehiclename" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Model</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="model" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Vehicle No</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="vehiclenum" class="form-control" />
+        </div>
+    </div>
+
+   
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Registration No</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="regnum" class="form-control" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Engine No</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="enginenum" class="form-control" />
+        </div>
+    </div>
+
+    @*<div class="col-md-12" style="margin-top:1%">*@
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Chasis No</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="chasisnum" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Previous RC</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="previousrc" class="form-control" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Pollution(Y/N)</label>
+        </div>
+
+        <div class="col-md-8">
+            <select id="pollution" class="form-control">
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">NOC Document(Y/N)</label>
+        </div>
+
+        <div class="col-md-8">
+            <select id="noc" class="form-control">
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Insurance Available(Y/N)</label>
+        </div>
+
+        <div class="col-md-8">
+            <select id="insurance" class="form-control">
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Vehicle Type</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="vehicletype" class="form-control" />
+        </div>
+    </div>
+
+    @*<div class="col-md-12" style="margin-top:1%">*@
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Vehicle Company</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="vehiclecompany" class="form-control" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Store Location</label>
+        </div>
+
+        <div class="col-md-8">
+            <select id="storelocation" class="form-control">
+                <option value="">Select</option>
+                <option value="NRPT1">NRPT1</option>
+                <option value="NRPT2">NRPT2</option>
+                <option value="SP">SP</option>
+            </select>
+           
+        </div>
+    </div>   
+</div>
+
+
+<div class="col-md-12 blue-container-box margin-bottom" style="margin-top:1%">
+    <div class="col-md-1" style="margin-left:1%">
+        <label class="color-black">RC Upload</label>
+    </div>
+    <div class="col-md-8">
+        <div class="input-group" style="margin-left:6%">
+            <label class="input-group-btn">
+                <span class="btn btn-primary">
+                    Browse&hellip; <input type="file" name="file" id="FileUpload1" style="display: none;" multiple>
+                </span>
+            </label>
+            <input type="text" class="form-control" readonly>
+        </div>
+    </div>
+    <div class="col-md-1" style="margin-left:-28%">
+        <input type="button" id="btnUpload" value="Upload" class="btn btn-success" />
+    </div>
+
+</div>
+
+<div class="row">
+    <input type="button" id="btnSubmit" value="Save and Next" class="btnSave btn btn-primary btn-sm pull-right" />
+</div>
+
+@section scripts{
+    <script>
+        var CustomerID=@Html.Raw(Json.Encode(ViewBag.CustomerID));
+        $(document).on('click', '#btnSubmit', function () {
+            //debugger;
+            var vehiclename = $("#vehiclename").val();
+            var model = $("#model").val();
+            var vehiclenum = $("#vehiclenum").val();
+            var regnum = $("#regnum").val();
+            var enginenum = $("#enginenum").val();
+            var chasisnum = $("#chasisnum").val();
+            var previousrc = $("#previousrc").val();
+            var pollution = $("#pollution").val();
+            var insurance = $("#insurance").val();
+            var noc = $("#noc").val();
+            var vehicletype = $("#vehicletype").val();
+            var vehiclecompany = $("#vehiclecompany").val();
+            var storelocation = $("#storelocation").val();
+            var jsonvehicle = "";
+            var jsonObj = [];
+            var item = {};
+
+            item["StoreLocation"] = storelocation;
+            item["VehicleName"] = vehiclename;
+            item["Model"] = model;
+            item["RegistrationNo"] = regnum;
+            item["VehicleNO"] = vehiclenum;
+            item["EngineNo"] = enginenum;
+            item["ChasisNo"] = chasisnum;
+            item["PreviousRegNo"] = previousrc;
+            item["Insurance"] = insurance;
+            item["NOCDocuments"] = noc;
+            item["Pollution"] = pollution;
+            item["VehicleType"] = vehicletype;
+            item["VehicleCompany"] = vehiclecompany;
+           
+                    jsonObj.push(item);
+            jsonvehicle = JSON.stringify(jsonObj);
+            debugger;
+            if (jsonvehicle.length > 0) {
+                $.ajax({
+                    url: '/OnBoardCustomer/InsertVehicleData',
+                    data: {
+                        jsonvehicle: jsonvehicle,
+                        CustomerID: CustomerID
+                    },
+                    contentType: false,
+                    //beforeSend: function () {
+                    //    $('.pageBusyLoader').show();
+                    //},
+                    //complete: function () {
+                    //    $('.pageBusyLoader').hide();
+                    //},
+                    success: function (Data) {
+                        if (Data != '') {
+                            var url = "/OnBoardCustomer/SchemeDetails?CustomerID=" + CustomerID;
+                            window.location.href = url;
+                        }
+                        else {
+                            //toast.error("Some thing went wrong Please try again", "Error");
+                        }
+
+                    }
+
+                });
+                //var url = "/OnBoardCustomer/SchemeDetails;
+                //window.location.href = url;
+            }
+            return false;
+        });
+
+
+
+
+
+
+        $(document).on('change', ':file', function () {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        $(document).on('fileselect', ':file', function (event, numFiles, label) {
+            var input = $(this).parents('.input-group').find(':text'),
+                log = numFiles > 1 ? numFiles + ' files selected' : label;
+            if (input.length) {
+                input.val(log);
+            } else {
+                if (log)
+                    console.log(log);
+            }
+        });
+    </script>
+}
+

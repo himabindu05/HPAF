@@ -1,0 +1,318 @@
+﻿
+@{
+    ViewBag.Title = "EMI Update";
+}
+
+<h2>EMI Update</h2>
+
+<style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #286090;
+            color: white;
+        }
+</style>
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-8">
+            <input type="text" class="form-control" placeholder="Enter Vehicle No/Agreement No" />
+        </div>
+        <div class="col-md-3">
+            <input type="button" id="btnSubmit1" value="Get Data" class="btnSave btn btn-primary btn-default" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Customer Name</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="firsttname" class="form-control" value="John" />
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Vehicle No</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="lastname" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">EMI Amount</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="emiamount" class="form-control" value="1500" />
+        </div>
+    </div>
+
+    @*<div class="col-md-12" style="margin-top:1%">*@
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Total EMIs</label>
+        </div>
+        <div class="col-md-8">
+            <input type="text" id="totalemis" class="form-control" value="15" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Balance Amount</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="age" class="form-control" value="12000" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Payment Date</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="date" id="agreementdate" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Payment Location</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="paymentlocation" class="form-control" value="NRPT1" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Store Location</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="date" id="agreementdate" class="form-control" value="NRPT1" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Status</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="paymentlocation" class="form-control" value="Paid" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Loan Amount</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="date" id="agreementdate" class="form-control" value="15000" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Due Date</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="date" id="duedate" class="form-control" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">No of days delayed</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="date" id="agreementdate" class="form-control" value="5" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Total Amount in this EMI</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="duedate" class="form-control" />
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top:1%">
+    <input type="button" id="btnSubmit1" value="Pay" style="margin-left:85%" class="btnSave btn btn-primary btn-default" />
+    <input type="button" id="btnSubmit2" value="Print Receipt" class="btnSave btn btn-primary btn-default pull-right" />
+</div>
+
+<table id="customers" style="margin-top:1%">
+    <tr>
+        <th>S.no</th>
+        <th>EMI Amount</th>
+        <th>Due Date</th>
+        <th>EMI Received</th>
+        <th>Last Received Date</th>
+        <th>No of Days Delayed</th>
+        <th>Penalty</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1800</td>
+        <td>10/2/2018</td>
+        <td>1800</td>
+        <td>10/2/2018</td>
+        <td>0</td>
+        <td>0</td>
+        <td>Paid</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>1800</td>
+        <td>10/3/2018</td>
+        <td>1800</td>
+        <td>15/3/2018</td>
+        <td>5</td>
+        <td>125</td>
+        <td>Paid</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>1800</td>
+        <td>10/4/2018</td>
+        <td>1800</td>
+        <td>11/4/2018</td>
+        <td>1</td>
+        <td>0</td>
+        <td>Paid</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>1800</td>
+        <td>10/5/2018</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>1800</td>
+        <td>10/6/2018</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>1800</td>
+        <td>10/6/2018</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>1800</td>
+        <td>10/6/2018</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>1800</td>
+        <td>10/6/2018</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>1800</td>
+        <td>10/6/2018</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>1800</td>
+        <td>10/6/2018</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>19800</td>
+        <td>10/6/2018</td>
+        <td>5400</td>
+        <td>10/2/2018</td>
+        <td>6</td>
+        <td>125</td>
+        <td></td>
+    </tr>
+</table>
+

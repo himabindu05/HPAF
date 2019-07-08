@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "SchemeDetails";
+}
+
+<h2>SchemeDetails</h2>
+
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Agreement No</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="agreementnum" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Down Payment</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="downpayment" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Hand Loan</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="handloan" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Total Loan Amount</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="totalloan" class="form-control" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">EMI Amount</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="emiamount" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">No of EMI's</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="noofemis" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Agreement Date</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="date" id="agreementdate" class="form-control" />
+        </div>
+     </div>
+        <div class="col-md-6">
+            <div class="col-md-3">
+                <label class="color-black">Hand Loan Due Date</label>
+            </div>
+
+            <div class="col-md-8">
+                <input type="date" id="handloanduedate" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12" style="margin-top:1%">
+
+        <div class="col-md-6">
+            <div class="col-md-3">
+                <label class="color-black">Store Location</label>
+            </div>
+
+            <div class="col-md-8">
+                <select id="storelocation" class="form-control">
+                    <option value="">Select</option>
+                    <option value="NRPT1">NRPT1</option>
+                    <option value="NRPT2">NRPT2</option>
+                    <option value="SP">SP</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <input type="button" id="btnSubmit" value="Submit" class="btnSave btn btn-primary btn-sm pull-right" />
+    </div>
+
+    @section scripts{
+        <script>
+
+
+            var now = new Date();
+
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+            var today = now.getFullYear() + "-" + (month) + "-" + (day);
+
+            $('#agreementdate').val(today);
+        var CustomerID=@Html.Raw(Json.Encode(ViewBag.CustomerID));
+        $(document).on('click', '#btnSubmit', function () {
+            //debugger;
+            var agreementNum = $("#agreementnum").val();
+            var downpayment = $("#downpayment").val();
+            var handloan = $("#handloan").val();
+            var totalloan = $("#totalloan").val();
+            var emiamount = $("#emiamount").val();
+            var noofemis = $("#noofemis").val();
+            var agreementdate = $("#agreementdate").val();
+            var handloanduedate = $("#handloanduedate").val();
+            var storelocation = $("#storelocation").val();
+
+            var jsonscheme = "";
+            var jsonObj = [];
+            var item = {};
+
+            item["AgreementID"] = agreementNum;
+            item["LocationCode"] = storelocation;
+            item["DownPayment"] = downpayment;
+            item["HandLoan"] = handloan;
+            item["TotalLoanAmount"] = totalloan;
+            item["EMIAmount"] = emiamount;
+            item["NoOfEMI"] = noofemis;
+            item["AgreementDate"] = agreementdate;
+            item["HandLoanDueDate"] = handloanduedate;
+
+                    jsonObj.push(item);
+            jsonscheme = JSON.stringify(jsonObj);
+            debugger;
+            if (jsonscheme.length > 0) {
+                $.ajax({
+                    url: '/OnBoardCustomer/InsertSchemeData',
+                    data: {
+                        jsonscheme: jsonscheme,
+                        CustomerID: CustomerID
+                    },
+                    contentType: false,
+                    //beforeSend: function () {
+                    //    $('.pageBusyLoader').show();
+                    //},
+                    //complete: function () {
+                    //    $('.pageBusyLoader').hide();
+                    //},
+                    success: function (Data) {
+                        if (Data != '') {
+                          
+                        }
+                        else {
+                            //toast.error("Some thing went wrong Please try again", "Error");
+                        }
+
+                    }
+
+                });
+                
+            }
+            return false;
+        });
+
+
+        </script>
+    }
+

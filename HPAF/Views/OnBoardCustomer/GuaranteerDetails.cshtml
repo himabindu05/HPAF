@@ -1,0 +1,303 @@
+﻿
+@{
+    ViewBag.Title = "Guaranteer Details";
+}
+
+<h2>Guaranteer Details</h2>
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">First Name *</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="firsttname" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Last Name</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="lastname" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">DOB</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="dob" class="form-control" />
+        </div>
+    </div>
+
+    @*<div class="col-md-12" style="margin-top:1%">*@
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Gender</label>
+        </div>
+        <div class="col-md-8">
+            <select id="gender" class="form-control">
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            @*<input type="text" id="gender" class="form-control" />*@
+        </div>
+    </div>
+</div>
+@*</div>*@
+<div class="col-md-12" style="margin-top:1%">
+
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Age</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="age" class="form-control" />
+        </div>
+    </div>
+
+    @*<div class="col-md-12" style="margin-top:1%">*@
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Mobile Number</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="mobilenum" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Aadhar Number</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="aadhar" class="form-control" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Pin-Code</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="pincode" class="form-control" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Father/Husband Name</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="fathusname" class="form-control" />
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Occupation</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="occupation" class="form-control" />
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12" style="margin-top:1%">
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Landmark</label>
+        </div>
+
+        <div class="col-md-8">
+            <input type="text" id="landmark" class="form-control" />
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="col-md-3">
+            <label class="color-black">Address</label>
+        </div>
+
+        <div class="col-md-8">
+            <textarea id="address" rows="4" cols="50" class="form-control"></textarea>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-md-12 blue-container-box margin-bottom" style="margin-top:1%">
+    <div class="col-md-1" style="margin-left:1%">
+        <label class="color-black">Photo</label>
+    </div>
+    <div class="col-md-8">
+        <div class="input-group" style="margin-left:6%">
+            <label class="input-group-btn">
+                <span class="btn btn-primary">
+                    Browse&hellip; <input type="file" name="file" id="FileUpload1" style="display: none;" multiple>
+                </span>
+            </label>
+            <input type="text" class="form-control" readonly>
+        </div>
+    </div>
+    <div class="col-md-1" style="margin-left:-28%">
+        <input type="button" id="btnUpload" value="Upload" class="btn btn-success" />
+    </div>
+
+</div>
+
+<div class="col-md-12 blue-container-box margin-bottom" style="margin-top:1%">
+    <div class="col-md-1" style="margin-left:1%">
+        <label class="color-black">Aadhar</label>
+    </div>
+    <div class="col-md-8">
+        <div class="input-group" style="margin-left:6%">
+            <label class="input-group-btn">
+                <span class="btn btn-primary">
+                    Browse&hellip; <input type="file" name="file" id="FileUpload1" style="display: none;" multiple>
+                </span>
+            </label>
+            <input type="text" class="form-control" readonly>
+        </div>
+    </div>
+    <div class="col-md-1" style="margin-left:-28%">
+        <input type="button" id="btnUpload" value="Upload" class="btn btn-success" />
+    </div>
+
+</div>
+<div class="col-md-12 blue-container-box margin-bottom" style="margin-top:1%">
+    <div class="col-md-1" style="margin-left:1%">
+        <label class="color-black">Address Proof</label>
+    </div>
+    <div class="col-md-8">
+        <div class="input-group" style="margin-left:6%">
+            <label class="input-group-btn">
+                <span class="btn btn-primary">
+                    Browse&hellip; <input type="file" name="file" id="FileUpload1" style="display: none;" multiple>
+                </span>
+            </label>
+            <input type="text" class="form-control" readonly>
+        </div>
+    </div>
+    <div class="col-md-1" style="margin-left:-28%">
+        <input type="button" id="btnUpload" value="Upload" class="btn btn-success" />
+    </div>
+
+</div>
+
+<div class="row">
+    <input type="button" id="btnSubmit" value="Save and Next" class="btnSave btn btn-primary btn-sm pull-right" />
+</div>
+
+@section scripts{
+    <script>
+        var CustomerID=@Html.Raw(Json.Encode(ViewBag.CustomerID));
+        $(document).on('click', '#btnSubmit', function () {
+            //debugger;
+            var firsttname = $("#firsttname").val();
+            var lastname = $("#lastname").val();
+            var fatHusname = $("#fathusname").val();
+            var dob = $("#dob").val();
+            var gender = $("#gender").val();
+            var age = $("#age").val();
+            var mobilenum = $("#mobilenum").val();
+            var aadharno = $("#aadhar").val();
+            var pincode = $("#pincode").val();
+            var address = $("#address").val();
+
+            var landmark = $("#landmark").val();
+            var occupation = $("#occupation").val();
+            if (occupation == '') {
+                occupation = null;
+            }
+            var json_elementsCustomer = "";
+            var jsonObj = [];
+            var item = {};
+
+            item["FirstName"] = firsttname;
+            item["LastName"] = lastname;
+            item["FatherOrHusbandName"] = fatHusname;
+            item["DOB"] = dob;
+            item["Gender"] = gender;
+            item["Age"] = age;
+            item["MobileNo"] = mobilenum;
+            item["AadharNo"] = aadharno;
+            item["Address"] = address;
+            item["Landmark"] = landmark;
+            item["Pincode"] = pincode;
+            item["Occupation"] = occupation;
+           
+                    jsonObj.push(item);
+            json_elementsGuaranteer = JSON.stringify(jsonObj);
+            debugger;
+            if (json_elementsGuaranteer.length > 0) {
+                $.ajax({
+                    url: '/OnBoardCustomer/InsertGuaranteerData',
+                    data: {
+                        json_elementsGuaranteer: json_elementsGuaranteer,
+                        CustomerID: CustomerID
+                    },
+                    contentType: false,
+                    //beforeSend: function () {
+                    //    $('.pageBusyLoader').show();
+                    //},
+                    //complete: function () {
+                    //    $('.pageBusyLoader').hide();
+                    //},
+                    success: function (Data) {
+                        if (Data != -1) {
+                            var url = "/OnBoardCustomer/VehicleDetails?CustomerID=" + CustomerID;
+                            window.location.href = url;
+                        }
+                    }
+                });
+
+            }
+            return false;
+        });
+
+
+
+
+
+
+        $(document).on('change', ':file', function () {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        $(document).on('fileselect', ':file', function (event, numFiles, label) {
+            var input = $(this).parents('.input-group').find(':text'),
+                log = numFiles > 1 ? numFiles + ' files selected' : label;
+            if (input.length) {
+                input.val(log);
+            } else {
+                if (log)
+                    console.log(log);
+            }
+        });
+    </script>
+}
+
